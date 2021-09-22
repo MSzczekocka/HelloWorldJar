@@ -1,6 +1,5 @@
 package com.test.HelloWorldJar.browser;
 
-
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
