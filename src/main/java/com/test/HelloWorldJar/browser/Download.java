@@ -13,7 +13,6 @@ public class Download {
             String content = "Hello World";
             // Where file will be added
             String path="C:\\test\\hello.txt";
-
             File file = new File(path);
 
             FileWriter fw = new FileWriter(file.getAbsoluteFile());
