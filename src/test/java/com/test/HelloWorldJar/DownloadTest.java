@@ -1,16 +1,37 @@
 package com.test.HelloWorldJar;
 
-import org.junit.jupiter.api.Assertions;
+import com.test.HelloWorldJar.controller.HelloWorldController;
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.io.File;
 
-
+@RunWith(SpringJUnit4ClassRunner.class)
 public class DownloadTest {
 
+    private MockMvc mockMvc;
+    @InjectMocks
+    private HelloWorldController helloWorldController;
+
+    @Before
+    public void setUp() throws Exception{
+
+        mockMvc = MockMvcBuilders.standaloneSetup(helloWorldController)
+                .build();
+    }
+
+
     @Test
-    public void fileExist(){
-        boolean check = new File("C:\\test\\hello.txt").exists();
-        Assertions.assertTrue(check);
+    public void fileExist() throws Exception {
+        mockMvc.perform(
+                        MockMvcRequestBuilders.get("/hello")
+                )
+                .andExpect(MockMvcResultMatchers.status().isOk());
     }
 }

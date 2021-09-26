@@ -16,13 +16,11 @@ public class HelloWorldController {
     private final Download download;
 
     @GetMapping("/hello")
-    @ResponseBody
     public String getDownloadButton(){
         return "<a href=http://localhost:8080/hello-txt> download </a>";
     }
 
     @GetMapping("/hello-txt")
-    @ResponseBody
     public String getDownload(){
         download.createTxt();
         return "Downloaded";
