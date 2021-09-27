@@ -2,6 +2,7 @@ package com.test.HelloWorldJar;
 
 import com.test.HelloWorldJar.browser.Download;
 import com.test.HelloWorldJar.controller.HelloWorldController;
+import lombok.RequiredArgsConstructor;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ import java.io.File;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-
+@RequiredArgsConstructor
 public class DownloadTest {
 
 
@@ -25,16 +26,14 @@ public class DownloadTest {
 
     @Test
     public void checkfile(){
-        HelloWorldController helloWorldController = mock(HelloWorldController.class);
-        when(helloWorldController.getDownload()).thenReturn(testDownload());
-        Assert.assertEquals(helloWorldController.getDownload(),"Downloaded");
-        boolean check = new File("C:\\test\\hello.txt").exists();
-        Assertions.assertTrue(check);
+        Download download = new Download();
+        HelloWorldController helloWorldController = new HelloWorldController(download);
+        helloWorldController.getDownload();
+        Assertions.assertTrue(new File("C:\\test\\hello.txt").exists());
     }
 
-    public String testDownload(){
-        Download download = mock(Download.class);
-        download.createTxt();
-        return "Downloaded";
-    }
+//    public File testDownload(){
+//        Download download = new Download();
+//        return download.createTxt();
+//    }
 }

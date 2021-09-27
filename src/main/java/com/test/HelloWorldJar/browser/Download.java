@@ -7,7 +7,7 @@ import java.io.*;
 @Service
 public class Download {
 
-    public void createTxt(){
+    public File createTxt(){
         try{
             // Content in file
             String content = "Hello World";
@@ -26,8 +26,10 @@ public class Download {
 
             // Close connection
             bw.close();
+            return file;
         } catch(IOException e){
             e.printStackTrace();
+            return null;
         }
     }
 }
