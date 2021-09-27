@@ -8,12 +8,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.File;
+
 
 @RestController
-@RequiredArgsConstructor
 public class HelloWorldController {
 
     private final Download download;
+
+    public HelloWorldController(Download download) {
+        this.download = download;
+    }
 
     @GetMapping("/hello")
     @ResponseBody
@@ -23,9 +28,8 @@ public class HelloWorldController {
 
     @GetMapping("/hello-txt")
     @ResponseBody
-    public String getDownload(){
-        download.createTxt();
-        return "Downloaded";
+    public File getDownload(){
+        return download.createTxt();
     }
 
 }
