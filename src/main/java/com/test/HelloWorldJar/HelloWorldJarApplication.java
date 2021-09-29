@@ -4,17 +4,10 @@ import com.test.HelloWorldJar.browser.BrowserOpener;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
-
 @SpringBootApplication
 public class HelloWorldJarApplication {
-
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(HelloWorldJarApplication.class, args);
-
-		BrowserOpener browserOpener = new BrowserOpener();
 		BrowserOpener.browse("http://localhost:8080/hello");
-
 	}
-
 }
