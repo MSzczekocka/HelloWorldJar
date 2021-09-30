@@ -3,7 +3,6 @@ package com.test.HelloWorldJar.browser;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
-import java.nio.file.Paths;
 
 @Service
 public class Download {
@@ -14,7 +13,7 @@ public class Download {
             // Content in file
             String content = "Hello World";
             // Where file will be added - project folder
-            String path= System.getProperty("user.dir").toString()+"/hello.txt";
+            String path= System.getProperty("user.dir")+"/hello.txt";
             File file = new File(path);
 
             // FileWriter - class used for writing streams of characters.
