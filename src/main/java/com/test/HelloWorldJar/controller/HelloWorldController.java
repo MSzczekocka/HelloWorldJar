@@ -2,6 +2,7 @@ package com.test.HelloWorldJar.controller;
 
 
 import com.test.HelloWorldJar.browser.Download;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +21,7 @@ public class HelloWorldController {
 
     @GetMapping("/hello")
     @ResponseBody
-    public String getDownloadButton(){
+    public String getDownloadButton() {
         return "<a href=http://localhost:8080/hello-txt> download </a>";
     }
 

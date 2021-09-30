@@ -3,6 +3,7 @@ package com.test.HelloWorldJar;
 import com.test.HelloWorldJar.browser.BrowserOpener;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 
 @SpringBootApplication
 public class HelloWorldJarApplication {
@@ -14,4 +15,5 @@ public class HelloWorldJarApplication {
 		System.out.println(currentWorkingDir);
 
 	}
+
 }
