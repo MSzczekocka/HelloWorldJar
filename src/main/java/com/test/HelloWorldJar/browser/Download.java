@@ -9,11 +9,12 @@ import java.nio.file.Paths;
 public class Download {
 
     public File createTxt(){
+
         try{
             // Content in file
             String content = "Hello World";
-            // Where file will be added
-            String path= Paths.get(".").toString();
+            // Where file will be added - project folder
+            String path= System.getProperty("user.dir").toString()+"/hello.txt";
             File file = new File(path);
 
             // FileWriter - class used for writing streams of characters.

@@ -9,5 +9,9 @@ public class HelloWorldJarApplication {
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(HelloWorldJarApplication.class, args);
 		BrowserOpener.browse("http://localhost:8080/hello");
+
+		String currentWorkingDir = System.getProperty("user.dir");
+		System.out.println(currentWorkingDir);
+
 	}
 }
