@@ -7,10 +7,11 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 
 public class DownloadTest {
+    Download download = new Download();
+    HelloWorldController helloWorldController = new HelloWorldController(download);
+
     @Test
     public void checkfile(){
-        Download download = new Download();
-        HelloWorldController helloWorldController = new HelloWorldController(download);
         helloWorldController.getDownload();
         Assertions.assertTrue(new File("C:\\test\\hello.txt").exists());
     }
