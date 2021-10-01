@@ -7,7 +7,6 @@ import java.net.URISyntaxException;
 
 public class BrowserOpener {
 
-
     public static void browse(String url) {
 //  Desktop - class from package java.awt.
 //    Supported operations include:
@@ -15,7 +14,7 @@ public class BrowserOpener {
 //      launching the user-default mail client with an optional mailto URI;
 //      launching a registered application to open, edit or print a specified file.
 //  isDesktopSupported() - tests whether this class is supported on the current platform.
-        if(Desktop.isDesktopSupported()){
+        if (Desktop.isDesktopSupported()) {
             Desktop desktop = Desktop.getDesktop();
 //  browse() - Launches the default browser to display a URI.
             try {
@@ -26,7 +25,7 @@ public class BrowserOpener {
             } catch (IOException | URISyntaxException e) {
                 e.printStackTrace();
             }
-        }else{
+        } else {
 //  Runtime - allows the application to interface with the environment in which the application is running.
 //  getRuntime() - returns the runtime object associated with the current Java application.
             Runtime runtime = Runtime.getRuntime();

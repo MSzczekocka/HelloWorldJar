@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.test</groupId>
-	<artifactId>HelloWorldJar</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>HelloWorldJar</name>
+	<artifactId>java</artifactId>
+	<version>v1</version>
+	<name>java</name>
 	<description>App open from JAR file</description>
 	<properties>
 		<maven.compiler.source>11</maven.compiler.source>
