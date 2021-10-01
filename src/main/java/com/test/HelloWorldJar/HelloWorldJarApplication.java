@@ -16,4 +16,6 @@ public class HelloWorldJarApplication {
 
 	}
 
+	private void argumentNotValidException(){
+	}
 }
